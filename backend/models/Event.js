@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
 const Event = mongoose.model('Event', new mongoose.Schema({
-        event:{
+        name:{
             type: String,
             trim: true.valueOf,
             required: [true, "Please add Event name"]
         },
-        text:{
+        email:{
             type: String,
             required: [true, "Please add text"]
         },
-        date:{
+        age:{
             type: String,
             required: [true, 'Please add event date']
         },

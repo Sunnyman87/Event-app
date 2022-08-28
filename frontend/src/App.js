@@ -2,8 +2,8 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import LogIn from './components/Login';
-import SetEvent from './components/SetEvent';
-import Events from './components/Events';
+import RegisterForm from './components/RegisterForm';
+import EventUsers from './components/EventUsers';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
@@ -18,8 +18,8 @@ function App() {
         <Routes>
           
           <Route path="/" element={<LogIn />}></Route>
-          <Route path="/form" element={<SetEvent />}></Route>
-          <Route path="/events" element={<Events />}></Route>
+          <Route path="/form" element={<RegisterForm />}></Route>
+          <Route path="/events" element={<EventUsers />}></Route>
           
         </Routes>
       </Router>

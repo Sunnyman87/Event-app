@@ -5,43 +5,43 @@ import eventServices from '../services/eventServices';
 import {Button, Table } from 'react-bootstrap';
 
 
-const Events = () => {
+const EventUsers = () => {
     
     
-    const [events, setEvents] = useState([]);
+    const [users, setUsers] = useState([]);
 
     const getData = () => {
         eventServices.getEvents().then(res => {
-            setEvents([...res.data]);
+            setUsers([...res.data]);
         })
     }
     useEffect(() => {
         getData();
     }, []);
 
-    console.log(events);
+    console.log(users);
     
 
     return (
         <div>
-            <h1 className='text-center my-3'>Events</h1>
-            {events.length > 0 ? (
-                <Table striped bordered hover variant="dark" className='m-5'>
+            <h1 className='text-center my-5 py-5'>Register users to Event</h1>
+            {users.length > 0 ? (
+                <Table striped bordered hover variant="dark" className='my-5 '  >
                     <thead>
                         <tr>
-                            <th>Event name</th>
-                            <th>About</th>
-                            <th>Event date</th>
+                            <th>Name, Last name</th>
+                            <th>E-mail</th>
+                            <th>Age</th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        {events.map((event, index) => (
+                        {users.map((users, index) => (
                             <tr key={index}>
                                 {/* <td>{event._id}</td> */}
-                                <td>{event.event}</td>
-                                <td>{event.text}</td>
-                                <td>{event.date}</td>
+                                <td>{users.name}</td>
+                                <td>{users.email}</td>
+                                <td>{users.age}</td>
                             </tr>
                         ))}
 
@@ -56,4 +56,4 @@ const Events = () => {
     )
 }
 
-export default Events
+export default EventUsers

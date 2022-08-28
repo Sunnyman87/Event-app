@@ -1,7 +1,7 @@
 import React from 'react'
-import Events from './Events'
+import Events from './EventUsers'
 import LogIn from './Login'
-import SetEvent from './SetEvent'
+import SetEvent from './RegisterForm'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 
