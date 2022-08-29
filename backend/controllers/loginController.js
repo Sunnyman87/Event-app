@@ -14,7 +14,11 @@ const asyncHandler = require('express-async-handler');
 // @access PUBLIC
 const loginUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
-    
+    if ( !email || !password) {
+        
+        res.status(400);
+        throw new Error('Invalid user data')
+    }
     const user = await User.findOne({ email });
     if (user && (await bcrypt.compare(password, user.password))) {
         res.json(

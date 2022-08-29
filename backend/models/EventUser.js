@@ -1,18 +1,18 @@
 const mongoose = require('mongoose');
 
-const Event = mongoose.model('Event', new mongoose.Schema({
+const EventUser = mongoose.model('Event', new mongoose.Schema({
         name:{
             type: String,
             trim: true.valueOf,
-            required: [true, "Please add Event name"]
+            required: [true, "Please add name, last name"]
         },
         email:{
             type: String,
-            required: [true, "Please add text"]
+            required: [true, "Please add email"]
         },
         age:{
             type: String,
-            required: [true, 'Please add event date']
+            required: [true, 'Please add age']
         },
         user:{
             type: mongoose.Schema.Types.ObjectId,
@@ -24,4 +24,4 @@ const Event = mongoose.model('Event', new mongoose.Schema({
         }
 }));
 
-module.exports = Event
+module.exports = EventUser

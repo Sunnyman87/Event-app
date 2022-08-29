@@ -38,7 +38,6 @@ const EventUsers = () => {
                     <tbody>
                         {users.map((users, index) => (
                             <tr key={index}>
-                                {/* <td>{event._id}</td> */}
                                 <td>{users.name}</td>
                                 <td>{users.email}</td>
                                 <td>{users.age}</td>
@@ -46,7 +45,7 @@ const EventUsers = () => {
                         ))}
 
                     </tbody>
-                </Table>) : (<h3 className='text-center my-3'>You don't have any Events upcoming!</h3>)}
+                </Table>) : (<h3 className='text-center my-3'>You don't have any Event attenders!</h3>)}
                 
         <Button variant="outline-primary"className="mt-5" type="submit"><a href="/form"  >Form</a></Button>{' '}
       <Button variant="outline-primary"className="mt-5" type="submit"><a href="/" >Logout</a></Button>{' '}

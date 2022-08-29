@@ -1,18 +1,18 @@
-const Event = require('../models/Event');
+const EventUser = require('../models/EventUser');
 const asyncHandler = require('express-async-handler');
 
 const setRegister = asyncHandler(async(req,res) => {
-    if (!req.body.event) {
+    if (!req.body.eventUser) {
         res.status(400)
         throw new Error ('Please add a text field');
     }
-    const event = await Event.create({
-        name: req.body.event,
-        email: req.body.text,
-        age: req.body.date,
+    const eventUser = await EventUser.create({
+        name: req.body.name,
+        email: req.body.email,
+        age: req.body.age,
         user: req.body.user
     })
-    res.status(200).json(event)
+    res.status(200).json(eventUser)
 });
 
 module.exports = setRegister
